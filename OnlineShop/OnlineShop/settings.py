@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'category',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'OnlineShop.wsgi.application'
+
+AUTH_USER_MODEL = 'accounts.Account'
 
 
 # Database
