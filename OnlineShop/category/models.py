@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -12,6 +13,10 @@ class Category(models.Model):
     class Meta: #to change the model name in the admin panel
         verbose_name = 'category'
         verbose_name_plural = 'categories'
+
+    # another way to change the pramater depends on each category(ex:jeans, shoes | book_id)
+    # def get_url(self):
+    #     return reverse('products_by_category', args=[self.slug])
     
 
     def __str__(self):

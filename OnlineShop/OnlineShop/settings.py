@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'category.context_processors.menu_links',#(by defulte it send to all pages)you can use it anywhere without send it like when you render a page and send it as context
             ],
         },
     },
