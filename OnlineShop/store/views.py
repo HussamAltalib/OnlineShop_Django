@@ -25,3 +25,16 @@ def store(request : HttpRequest, category_slug=None):
       'product_count': product_count
    }
    return  render(request, "store/store.html", context)
+
+
+
+def product_details(request : HttpRequest, category_slug, product_slug):
+   try:
+      single_product = Product.objects.get(category__slug=category_slug, slug=product_slug)#why we need category_slug here?
+   except Exception as e:
+      raise e
+   
+   context = {
+      'single_product' : single_product
+   }
+   return render(request, "store/product_details.html", context)
